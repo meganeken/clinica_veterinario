@@ -1,0 +1,125 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package br.ifsp.view;
+import javax.persistence.*;
+/**
+ *
+ * @author Andre Kenji Toda
+ */
+@Entity
+@Table
+public abstract class Pessoa {
+    
+    @Column(name = "nome")
+    private String nome;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cod", nullable = false)
+    private int cod; //avaliar a necessidade de cod nesta classe(Pessoa)
+    
+    @Id
+    @Column(name = "cpf", nullable = false)
+    private int cpf;
+    
+    @Column(name = "rg")
+    private int rg;
+    
+    @Column(name = "data_nasc")
+    private int data_nasc;
+    
+    @Column(name = "telefone")
+    private int telefone;
+    
+    @Column(name = "endereco")
+    private String endereco;
+    
+    @Column(name = "email")
+    private String email;
+    
+    public Pessoa(){}
+
+    public Pessoa(String nome, int cpf, int rg, int data_nasc, int telefone, String endereco, String email, int cod) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.data_nasc = data_nasc;
+        this.telefone = telefone;
+        this.endereco = endereco;
+        this.email = email;
+        this.cod = cod;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(int cpf) {
+        this.cpf = cpf;
+    }
+
+    public int getRg() {
+        return rg;
+    }
+
+    public void setRg(int rg) {
+        this.rg = rg;
+    }
+
+    public int getData_nasc() {
+        return data_nasc;
+    }
+
+    public void setData_nasc(int data_nasc) {
+        this.data_nasc = data_nasc;
+    }
+
+    public int getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(int telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getCod() {
+        return cod;
+    }
+
+    public void setCod(int cod) {
+        this.cod = cod;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" + "nome=" + nome + ", cod=" + cod + ", cpf=" + cpf + ", rg=" + rg + ", data_nasc=" + data_nasc + ", telefone=" + telefone + ", endereco=" + endereco + ", email=" + email + '}';
+    }
+
+}
