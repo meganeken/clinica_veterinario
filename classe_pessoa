@@ -16,14 +16,6 @@ public abstract class Pessoa {
     private String nome;
     
     /**
-     * Atributo do tipo Integer que indica o codigo da pessoa
-     */
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cod", nullable = false)
-    private int cod; //avaliar a necessidade de cod nesta classe(Pessoa)
-    
-    /**
      * Atributo do tipo Integer que indica o cpf da pessoa
      */
     @Id
@@ -75,10 +67,9 @@ public abstract class Pessoa {
      * @param telefone
      * @param endereco
      * @param email
-     * @param cod 
      * E um construtor completo.
      */
-    public Pessoa(String nome, int cpf, String rg, int data_nasc, int telefone, String endereco, String email, int cod) {
+    public Pessoa(String nome, int cpf, String rg, int data_nasc, int telefone, String endereco, String email) {
         this.nome = nome;
         this.cpf = cpf;
         this.rg = rg;
@@ -86,13 +77,12 @@ public abstract class Pessoa {
         this.telefone = telefone;
         this.endereco = endereco;
         this.email = email;
-        this.cod = cod;
     }
     
     
     /**
      * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
-     * @return 
+     * @getNome()
      */
     public String getNome() {
         return nome;
@@ -210,28 +200,11 @@ public abstract class Pessoa {
     }
 
     /**
-     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
-     * @return 
-     */
-    public int getCod() {
-        return cod;
-    }
-
-    /**
-     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
-     * passagem de parametro do valor desejado.
-     * @param nome 
-     */
-    public void setCod(int cod) {
-        this.cod = cod;
-    }
-
-    /**
      * Serve para mostrar o valor dos atributos desta classe(Pessoa).
      * @return 
      */
     @Override
     public String toString() {
-        return "Pessoa{" + "nome=" + nome + ", cod=" + cod + ", cpf=" + cpf + ", rg=" + rg + ", data_nasc=" + data_nasc + ", telefone=" + telefone + ", endereco=" + endereco + ", email=" + email + '}';
+        return "Pessoa{" + "nome=" + nome +  ", cpf=" + cpf + ", rg=" + rg + ", data_nasc=" + data_nasc + ", telefone=" + telefone + ", endereco=" + endereco + ", email=" + email + '}';
     }
 }
