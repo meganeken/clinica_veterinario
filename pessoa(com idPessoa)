@@ -1,0 +1,237 @@
+
+package br.ifsp.view;
+import javax.persistence.*;
+/**
+ * Classe pública do tipo abstrata.
+ * @author Andre Kenji Toda
+ */
+@Entity
+@Table
+public abstract class Pessoa {
+    
+    /**
+     * Atributo do tipo Integer que indica o codigo da pessoa
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idPessoa", nullable = false)
+    private int idPessoa; //avaliar a necessidade de cod nesta classe(Pessoa)
+    
+    /**
+     * Atributo do tipo String que o indica nome da pessoa.
+     */
+    @Column(name = "nome")
+    private String nome;
+    
+    /**
+     * Atributo do tipo Integer que indica o cpf da pessoa
+     */
+    @Id
+    @Column(name = "cpf", nullable = false)
+    private int cpf;
+    
+    /**
+     * Atributo do tipo String que indica o rg da pessoa.
+     */
+    @Column(name = "rg")
+    private String rg;
+    
+    /**
+     * Atributo do tipo Integer que indica data de nascimento da pessoa.
+     */
+    @Column(name = "data_nasc")
+    private int data_nasc;
+    
+    /**
+     * Atributo do tipo Integer que indica o telefone da pessoa.
+     */
+    @Column(name = "telefone")
+    private int telefone;
+    
+    /**
+     * Atributo do tipo String que indica o endereço da pessoa.
+     */
+    @Column(name = "endereco")
+    private String endereco;
+    
+    /**
+     * Atributo do tipo String que indica o email da pessoa.
+     */
+    @Column(name = "email")
+    private String email;
+    
+    /**
+     * Método que indica as primeiras ações a ser executadas quando haver o uso desta classe(Pessoa).
+     * E um construtor padrão.
+     */
+    public Pessoa(){}
+
+    /**
+     * Método realizado após o construtor padrão que inicializa o valor dos atributos desta classe.
+     * @param nome
+     * @param cpf
+     * @param rg
+     * @param data_nasc
+     * @param telefone
+     * @param endereco
+     * @param email
+     * @param idPessoa 
+     * E um construtor completo.
+     */
+    public Pessoa(String nome, int cpf, String rg, int data_nasc, int telefone, String endereco, String email, int idPessoa) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.data_nasc = data_nasc;
+        this.telefone = telefone;
+        this.endereco = endereco;
+        this.email = email;
+        this.idPessoa = idPessoa;
+    }
+    
+    
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @getNome()
+     */
+    public String getNome() {
+        return nome;
+    }
+
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
+    public int getCpf() {
+        return cpf;
+    }
+
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
+    public void setCpf(int cpf) {
+        this.cpf = cpf;
+    }
+
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
+    public String getRg() {
+        return rg;
+    }
+
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
+    public int getData_nasc() {
+        return data_nasc;
+    }
+
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
+    public void setData_nasc(int data_nasc) {
+        this.data_nasc = data_nasc;
+    }
+
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
+    public int getTelefone() {
+        return telefone;
+    }
+
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
+    public void setTelefone(int telefone) {
+        this.telefone = telefone;
+    }
+
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
+    public String getEndereco() {
+        return endereco;
+    }
+
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
+    public int getIdPessoa() {
+        return idPessoa;
+    }
+
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
+    public void setIdPessoa(int idPessoa) {
+        this.idPessoa = idPessoa;
+    }
+
+    /**
+     * Serve para mostrar o valor dos atributos desta classe(Pessoa).
+     * @return 
+     */
+    @Override
+    public String toString() {
+        return "Pessoa{" + "nome=" + nome + ", idPessoa=" + idPessoa + ", cpf=" + cpf + ", rg=" + rg + ", data_nasc=" + data_nasc + ", telefone=" + telefone + ", endereco=" + endereco + ", email=" + email + '}';
+    }
+}
