@@ -104,7 +104,4 @@ public abstract class Funcionario extends Pessoa{
     public String toString() {
         return "Funcionario{" + "cod=" + cod + ", salario=" + salario + ", cargo=" + cargo + ", cargaHorario=" + cargaHoraria + '}';
     }
-    
-    public abstract double calcularSalario();
-    
 }
