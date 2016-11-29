@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package br.ifsp.view;
 import javax.persistence.*;
 /**
@@ -11,38 +7,81 @@ import javax.persistence.*;
  */
 @Entity
 @Table
+/**
+ * Classe pública e abstrata chamada Pessoa.
+ */
 public abstract class Pessoa {
     
+    /**
+     * Variável do tipo String que o indica nome da pessoa.
+     */
     @Column(name = "nome")
     private String nome;
     
+    /**
+     * Variável do tipo Integer que indica o codigo da pessoa
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cod", nullable = false)
     private int cod; //avaliar a necessidade de cod nesta classe(Pessoa)
     
+    /**
+     * Variável do tipo Integer que indica o cpf da pessoa
+     */
     @Id
     @Column(name = "cpf", nullable = false)
     private int cpf;
     
+    /**
+     * Variável do tipo String que indica o rg da pessoa.
+     */
     @Column(name = "rg")
-    private int rg;
+    private String rg;
     
+    /**
+     * Variável do tipo Integer que indica data de nascimento da pessoa.
+     */
     @Column(name = "data_nasc")
     private int data_nasc;
     
+    /**
+     * Variável do tipo Integer que indica o telefone da pessoa.
+     */
     @Column(name = "telefone")
     private int telefone;
     
+    /**
+     * Variável do tipo String que indica o endereço da pessoa.
+     */
     @Column(name = "endereco")
     private String endereco;
     
+    /**
+     * Variável do tipo String que indica o email da pessoa.
+     */
     @Column(name = "email")
     private String email;
     
+    /**
+     * Método que indica as primeiras ações a ser executadas quando haver o uso desta classe(Pessoa).
+     * E um construtor padrão.
+     */
     public Pessoa(){}
 
-    public Pessoa(String nome, int cpf, int rg, int data_nasc, int telefone, String endereco, String email, int cod) {
+    /**
+     * Método realizado após o construtor padrão que inicializa o valor dos atributos desta classe.
+     * @param nome
+     * @param cpf
+     * @param rg
+     * @param data_nasc
+     * @param telefone
+     * @param endereco
+     * @param email
+     * @param cod 
+     * E um construtor completo.
+     */
+    public Pessoa(String nome, int cpf, String rg, int data_nasc, int telefone, String endereco, String email, int cod) {
         this.nome = nome;
         this.cpf = cpf;
         this.rg = rg;
@@ -52,71 +91,148 @@ public abstract class Pessoa {
         this.email = email;
         this.cod = cod;
     }
-
+    
+    
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
     public String getNome() {
         return nome;
     }
 
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
     public int getCpf() {
         return cpf;
     }
 
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
     public void setCpf(int cpf) {
         this.cpf = cpf;
     }
 
-    public int getRg() {
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
+    public String getRg() {
         return rg;
     }
 
-    public void setRg(int rg) {
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
+    public void setRg(String rg) {
         this.rg = rg;
     }
 
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
     public int getData_nasc() {
         return data_nasc;
     }
 
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
     public void setData_nasc(int data_nasc) {
         this.data_nasc = data_nasc;
     }
 
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
     public int getTelefone() {
         return telefone;
     }
 
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
     public void setTelefone(int telefone) {
         this.telefone = telefone;
     }
 
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
     public String getEndereco() {
         return endereco;
     }
 
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
     public int getCod() {
         return cod;
     }
 
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
     public void setCod(int cod) {
         this.cod = cod;
     }
 
+    /**
+     * Serve para mostrar o valor dos atributos desta classe(Pessoa).
+     * @return 
+     */
     @Override
     public String toString() {
         return "Pessoa{" + "nome=" + nome + ", cod=" + cod + ", cpf=" + cpf + ", rg=" + rg + ", data_nasc=" + data_nasc + ", telefone=" + telefone + ", endereco=" + endereco + ", email=" + email + '}';
