@@ -1,0 +1,110 @@
+
+package br.ifsp.view;
+import javax.persistence.*;
+/**
+ * Classe pública do tipo abstrata que herda os elementos da classe Pessoa.
+ * @author André Kenji Toda
+ */
+
+@Table
+@Entity
+public abstract class Funcionario extends Pessoa{
+    
+    /**
+     * Atributo do tipo int que indica o código do Funcionario.
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "código_funcionario", nullable = false)
+    private int cod;
+    /**
+     * Atributo do tipo double que indica o salario do Funcionario.
+     */
+    @Column(name = "salario")
+    private double salario;
+    
+    /**
+     * Atributo do tipo String que indica o cargo do Funcionario.
+     */
+    @Column(name = "cargo")
+    private String cargo;
+    
+    /**
+     * Atributo do tipo String que indica o cargo horário do Funcionario.
+     */
+    @Column(name = "carga_horario")
+    private String cargaHoraria;
+
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
+    public int getCod() {
+        return cod;
+    }
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
+    public void setCod(int cod) {
+        this.cod = cod;
+    }
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
+    public double getSalario() {
+        return salario;
+    }
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
+    public String getCargo() {
+        return cargo;
+    }
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+    /**
+     * Método acessor chamado get que serve para verificação e retorno do campo indicado. . 
+     * @return 
+     */
+    public String getCargaHoraria() {
+        return cargaHoraria;
+    }
+    /**
+     * Método acessor chamado set que serve para a alteração, setar valores de maneira protegida, requirindo 
+     * passagem de parametro do valor desejado.
+     * @param nome 
+     */
+    public void setCargaHorario(String cargaHorario) {
+        this.cargaHoraria = cargaHorario;
+    }
+
+    /**
+     * Serve para mostrar o valor dos atributos desta classe(Pessoa).
+     * @return 
+     */
+    @Override
+    public String toString() {
+        return "Funcionario{" + "cod=" + cod + ", salario=" + salario + ", cargo=" + cargo + ", cargaHorario=" + cargaHoraria + '}';
+    }
+    
+    public abstract double calcularSalario();
+    
+}
