@@ -2,7 +2,7 @@
 package br.ifsp.view;
 import javax.persistence.*;
 /**
- * Classe pública e abstrata chamada Pessoa.
+ * Classe pública do tipo abstrata.
  * @author Andre Kenji Toda
  */
 @Entity
@@ -10,13 +10,13 @@ import javax.persistence.*;
 public abstract class Pessoa {
     
     /**
-     * Variável do tipo String que o indica nome da pessoa.
+     * Atributo do tipo String que o indica nome da pessoa.
      */
     @Column(name = "nome")
     private String nome;
     
     /**
-     * Variável do tipo Integer que indica o codigo da pessoa
+     * Atributo do tipo Integer que indica o codigo da pessoa
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,38 +24,38 @@ public abstract class Pessoa {
     private int cod; //avaliar a necessidade de cod nesta classe(Pessoa)
     
     /**
-     * Variável do tipo Integer que indica o cpf da pessoa
+     * Atributo do tipo Integer que indica o cpf da pessoa
      */
     @Id
     @Column(name = "cpf", nullable = false)
     private int cpf;
     
     /**
-     * Variável do tipo String que indica o rg da pessoa.
+     * Atributo do tipo String que indica o rg da pessoa.
      */
     @Column(name = "rg")
     private String rg;
     
     /**
-     * Variável do tipo Integer que indica data de nascimento da pessoa.
+     * Atributo do tipo Integer que indica data de nascimento da pessoa.
      */
     @Column(name = "data_nasc")
     private int data_nasc;
     
     /**
-     * Variável do tipo Integer que indica o telefone da pessoa.
+     * Atributo do tipo Integer que indica o telefone da pessoa.
      */
     @Column(name = "telefone")
     private int telefone;
     
     /**
-     * Variável do tipo String que indica o endereço da pessoa.
+     * Atributo do tipo String que indica o endereço da pessoa.
      */
     @Column(name = "endereco")
     private String endereco;
     
     /**
-     * Variável do tipo String que indica o email da pessoa.
+     * Atributo do tipo String que indica o email da pessoa.
      */
     @Column(name = "email")
     private String email;
@@ -234,5 +234,4 @@ public abstract class Pessoa {
     public String toString() {
         return "Pessoa{" + "nome=" + nome + ", cod=" + cod + ", cpf=" + cpf + ", rg=" + rg + ", data_nasc=" + data_nasc + ", telefone=" + telefone + ", endereco=" + endereco + ", email=" + email + '}';
     }
-
 }
