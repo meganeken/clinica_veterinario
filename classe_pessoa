@@ -2,14 +2,12 @@
 package br.ifsp.view;
 import javax.persistence.*;
 /**
- *
+ * Classe pública e abstrata chamada Pessoa.
  * @author Andre Kenji Toda
  */
 @Entity
 @Table
-/**
- * Classe pública e abstrata chamada Pessoa.
- */
+
 public abstract class Pessoa {
     
     /**
